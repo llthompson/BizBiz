@@ -36,7 +36,7 @@ Today we are going to create a mock-import utility that we can use in our cars a
 
 * It's time for the moment of truth. Click the button. It should take a second and then populate your table with a list of "makes". If it didn't, check with someone near you or ask the instructor during class. Before you do that though, spend a few minutes debugging to see if you can find out where the issue is.
 
-* If the table is being populated it's time for us to move onto the next step which is adding our actions. We are going to have a dropdown menu under the actions column that allows us to "delete" that particular row. We are going to refence [menus](https://material-ui.com/components/menus/) from Material UI to do this. 
+* If the table is being populated it's time for us to move onto the next step which is adding our actions. We are going to have a dropdown menu under the actions column that allows us to "delete" that particular row. We are going to reference [menus](https://material-ui.com/components/menus/) from Material UI to do this. 
 
 * First `import { MoreVert } from '@material-ui/icons'` for the button and place the <MoreVert> component under the actions column in the table. We are going to expand our menu using its onClick method. Reference the code from the link above to figure out how to open/close the menu. Hint: Put the code for `<Menu>` outside of the table.
 

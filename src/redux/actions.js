@@ -34,3 +34,12 @@ export const fetchMakes = () => {
           });
   };
 };
+
+export const DELETE_MAKE = 'DELETE_MAKE';
+
+export const deleteMake = (index) => {
+  return {
+      type: DELETE_MAKE,
+      value: index
+      }
+  };
