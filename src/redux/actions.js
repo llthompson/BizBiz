@@ -14,6 +14,14 @@ export const removeCar = (index) => {
   }
 }
 
+export const removeRow = (index) => {
+  console.log('is it in actions')
+  return {
+    type: 'REMOVE_ROW',
+    value: index
+  }
+}
+
 export const fetchMakesSuccess = (makes) => ({
   type: 'FETCH_MAKES_SUCCESS',
   value: makes,
@@ -35,11 +43,11 @@ export const fetchMakes = () => {
   };
 };
 
-export const DELETE_MAKE = 'DELETE_MAKE';
+// export const DELETE_MAKE = 'DELETE_MAKE';
 
-export const deleteMake = (index) => {
-  return {
-      type: DELETE_MAKE,
-      value: index
-      }
-  };
+// export const deleteMake = (index) => {
+//   return {
+//       type: DELETE_MAKE,
+//       value: index
+//       }
+//   };

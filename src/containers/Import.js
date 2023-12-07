@@ -2,8 +2,8 @@
 import { connect } from 'react-redux'
 import Import from '../components/Import'
 import { fetchMakes } from '../redux/actions'
-import { deleteMake } from '../redux/actions'
-import { removeCar } from '../redux/actions'
+// import { deleteMake } from '../redux/actions'
+import { removeRow } from '../redux/actions'
 import Car from './Car'
 // import Car from '../components/Car'
 
@@ -16,8 +16,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchMakes: () => dispatch(fetchMakes()),
-        deleteMake: (index) => dispatch(deleteMake(index)),
-        removeCar: (index) => dispatch(removeCar(index))
+        // deleteMake: (index) => dispatch(deleteMake(index)),
+        removeRow: (index) => dispatch(removeRow(index))
     };
 };
 

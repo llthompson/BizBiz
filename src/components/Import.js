@@ -33,7 +33,8 @@ const Import = (props) => {
     const handleDeleteMake = () => {
         console.log("Deleting index:", deleteIndex);
         if (deleteIndex !== null) {
-            props.removeCar(deleteIndex);
+            console.log('propp', props)
+            props.removeRow(deleteIndex);
             handleMenuClose();
         }
     };
@@ -55,9 +56,6 @@ const Import = (props) => {
                 <MenuItem onClick={handleDeleteMake}>Delete</MenuItem>
             </Menu>
 
-            {/* <MenuItem onClick={handleDeleteMake}>Delete</MenuItem>
-            </Menu> */}
-
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
@@ -72,7 +70,7 @@ const Import = (props) => {
                             <TableCell>{make.MakeId}</TableCell>
                             <TableCell>{make.MakeName}</TableCell>
                             <TableCell align='center'>
-                                <MoreVert onMouseEnter={(event) => handleMenuClick(event, index)} />
+                                <MoreVert onClick={(event) => handleMenuClick(event, index)} />
                             </TableCell>
                         </TableRow>
                     ))}
