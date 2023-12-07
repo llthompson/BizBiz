@@ -15,20 +15,25 @@ import MenuItem from '@mui/material/MenuItem';
 const Import = (props) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [deleteIndex, setDeleteIndex] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleMenuClick = (event, index) => {
+        console.log("Clicked index:", index);
         setAnchorEl(event.currentTarget);
         setDeleteIndex(index);
+        setIsMenuOpen(true);
     };
 
     const handleMenuClose = () => {
         setAnchorEl(null);
         setDeleteIndex(null);
+        setIsMenuOpen(false);
     };
 
     const handleDeleteMake = () => {
+        console.log("Deleting index:", deleteIndex);
         if (deleteIndex !== null) {
-            props.deleteMake(deleteIndex);
+            props.removeCar(deleteIndex);
             handleMenuClose();
         }
     };
@@ -36,16 +41,22 @@ const Import = (props) => {
     return (
         <Container maxWidth="sm">
             <Button onClick={props.fetchMakes} variant="contained">
-                Blah
+                Import
             </Button>
 
             <Menu
                 anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
+                open={isMenuOpen}
                 onClose={handleMenuClose}
+                autoFocus={false}
+                onMouseLeave={() => setIsMenuOpen(false)}
+                onMouseEnter={() => setIsMenuOpen(true)}
             >
                 <MenuItem onClick={handleDeleteMake}>Delete</MenuItem>
             </Menu>
+
+            {/* <MenuItem onClick={handleDeleteMake}>Delete</MenuItem>
+            </Menu> */}
 
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
@@ -71,4 +82,4 @@ const Import = (props) => {
     );
 };
 
-export default Import
+export default Import;
