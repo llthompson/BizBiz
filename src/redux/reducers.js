@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { DELETE_MAKE } from './actions'
+// import { DELETE_MAKE } from './actions'
 
 const user = (state = null) => state
 
@@ -25,31 +25,13 @@ const makes = (state = [], action) => {
     }
 }
 
-
+const businesses = (state = null) => {
+    return state
+}
 
 const initialState = {
     makes: []
 };
 
-// const toDelete = (state = initialState, action) => {
-//     switch (action.type) {
-//         case DELETE_MAKE:
-//             console.log(action)
-//             const indexToDelete = action.value;
-//             const updatedMakes = [...state.makes];
-//             updatedMakes.splice(indexToDelete, 1);
 
-//             return {
-//                 ...state,
-//                 makes: updatedMakes
-//             };
-
-
-//         default:
-//             return state;
-//     }
-// };
-
-
-// removed toDelete from combineReducers
-export default combineReducers({ user, cars, makes, })
+export default combineReducers({ user, cars, makes, businesses })
