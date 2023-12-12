@@ -24,14 +24,7 @@ function Login() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            {/* <AppBar position="static">
-        <Toolbar>
-
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Music App
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
+     
             <Box
                 display="flex"
                 justifyContent="center"

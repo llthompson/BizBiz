@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-// import { DELETE_MAKE } from './actions'
 
 const user = (state = null) => state
 
@@ -14,20 +13,16 @@ const cars = (state = [], action) => {
     }
 }
 
-// const makes = (state = [], action) => {
-//     switch (action.type) {
-//         case 'FETCH_MAKES_SUCCESS': return action.value;
-//         case 'REMOVE_ROW':
-//             console.log('is it in reducers')
-//             return [...state.slice(0, action.value), ...state.slice(action.value + 1)];
-//         default:
-//             return state
-//     }
-// }
 
-const businesses = (state = null) => {
-    return state
+const businesses = (state = [], action) => {
+    switch (action.type) {
+        case 'REMOVE_ROW':
+            return state.filter((_, index) => index !== action.value);
+        default:
+            return state;
+    }
 }
+
 
 const initialState = {
     makes: []
