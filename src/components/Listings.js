@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete'
-import { removeRow } from '../redux/actions';
+// import { removeRow } from '../redux/actions';
 
 
 const Listings = ({ businesses, removeRow }) => {

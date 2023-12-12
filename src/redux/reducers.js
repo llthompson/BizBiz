@@ -24,9 +24,8 @@ const businesses = (state = [], action) => {
 }
 
 
-const initialState = {
-    makes: []
-};
+// const initialState = [];
+
 
 
 export default combineReducers({ user, cars, businesses })
