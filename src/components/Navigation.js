@@ -18,17 +18,17 @@ const Navigation = () => {
                 </Typography>
                 <ul className="nav-list">
                     <li className="nav-list-item">
-                        <Link to="/">Home</Link>
+                        <Link to="/">Listings</Link>
                     </li>
-                    <li className="nav-list-item">
+                    {/* <li className="nav-list-item">
                         <Link to="/dashboard">Dashboard</Link>
-                    </li>
+                    </li> */}
                     {/* <li className="nav-list-item">
                         <Link to="/import">Import</Link>
                     </li> */}
-                    <li className="nav-list-item">
+                    {/* <li className="nav-list-item">
                         <Link to="/listings">Listings</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-list-item">
                         <Link to="/login">Login</Link>
                     </li>

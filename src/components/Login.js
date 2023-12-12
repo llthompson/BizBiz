@@ -5,13 +5,12 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import React from 'react';
 import { useState } from 'react';
-import Listings from '../containers/Listings';
+// import Listings from '../containers/Listings';
 
 
-function Login() {
+const Login = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    //LISA CHANGE USE STATE TO FALSE BEFORE SUBMIT
 
     const handleLogin = () => {
         setIsLoggedIn(true);
@@ -19,7 +18,7 @@ function Login() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-     
+
             <Box
                 display="flex"
                 justifyContent="center"
@@ -32,17 +31,17 @@ function Login() {
                 autoComplete="off"
             >
 
-                {isLoggedIn ? (
+                {/* {isLoggedIn ? (
                     <Listings />
-                ) : (
+                ) : ( */}
 
-                    <Stack spacing={2}>
-                        <TextField required id="login-un" label="Username" variant="standard" />
-                        <TextField required id="login-pw" label="Password" variant="standard" />
-                        <Button onClick={handleLogin} variant="contained">Login</Button>
-                    </Stack>
+                <Stack spacing={2}>
+                    <TextField required id="login-un" label="Username" variant="standard" />
+                    <TextField required id="login-pw" label="Password" variant="standard" />
+                    <Button onClick={handleLogin} variant="contained">Login</Button>
+                </Stack>
 
-                )}
+                {/* )} */}
 
             </Box>
         </Box>
