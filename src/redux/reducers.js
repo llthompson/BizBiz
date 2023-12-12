@@ -14,16 +14,16 @@ const cars = (state = [], action) => {
     }
 }
 
-const makes = (state = [], action) => {
-    switch (action.type) {
-        case 'FETCH_MAKES_SUCCESS': return action.value;
-        case 'REMOVE_ROW':
-            console.log('is it in reducers')
-            return [...state.slice(0, action.value), ...state.slice(action.value + 1)];
-        default:
-            return state
-    }
-}
+// const makes = (state = [], action) => {
+//     switch (action.type) {
+//         case 'FETCH_MAKES_SUCCESS': return action.value;
+//         case 'REMOVE_ROW':
+//             console.log('is it in reducers')
+//             return [...state.slice(0, action.value), ...state.slice(action.value + 1)];
+//         default:
+//             return state
+//     }
+// }
 
 const businesses = (state = null) => {
     return state
@@ -34,4 +34,4 @@ const initialState = {
 };
 
 
-export default combineReducers({ user, cars, makes, businesses })
+export default combineReducers({ user, cars, businesses })

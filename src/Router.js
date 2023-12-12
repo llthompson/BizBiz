@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router'
 import Home from './containers/Home'
 import Car from './containers/Car'
 import Dashboard from './containers/Dashboard'
-import Import from './containers/Import'
 import Listings from './containers/Listings'
 import Login from './components/Login'
 
@@ -13,7 +12,6 @@ const Router = () => {
             <Route exact path="/" component={Home} />
             <Route path="/car/:id" component={Car} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/import" component={Import} />
             <Route path="/listings" component={Listings} />
             <Route path="/login" component={Login} />
         </Switch>
