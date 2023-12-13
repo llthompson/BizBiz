@@ -10,7 +10,8 @@ import DeleteIcon from '@mui/icons-material/Delete'
 // import { removeRow } from '../redux/actions';
 
 
-const Listings = ({ businesses, removeRow }) => {
+const Listings = (props) => {
+    console.log('here are the', props)
     return (
         <div>
             <div>
@@ -25,7 +26,7 @@ const Listings = ({ businesses, removeRow }) => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {businesses.map((business) => (
+                            {props.businesses.map((business) => (
                                 <TableRow
                                     key={business.name}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -39,9 +40,9 @@ const Listings = ({ businesses, removeRow }) => {
                                     <TableCell>
                                         <DeleteIcon
                                             onClick={() => {
-                                                const index = businesses.indexOf(business);
+                                                const index = props.businesses.indexOf(business);
                                                 console.log('Deleting business at index:', index);
-                                                removeRow(index);
+                                                props.removeRow(index);
                                             }}
                                             className="icon text-red"
                                         />

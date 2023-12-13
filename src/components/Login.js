@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import React from 'react';
 import { useState } from 'react';
 import Listings from '../containers/Listings';
+import cookie from 'cookie'; 
 
 
 const Login = () => {
@@ -14,6 +15,7 @@ const Login = () => {
 
     const handleLogin = () => {
         setIsLoggedIn(true);
+        document.cookie = cookie.serialize('loggedIn', 'true', { maxAge: 60 });
     };
 
     return (
