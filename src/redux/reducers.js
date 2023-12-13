@@ -13,8 +13,6 @@ const businesses = (state = [], action) => {
 }
 
 
-// const initialState = [];
-
 
 
 export default combineReducers({ businesses })

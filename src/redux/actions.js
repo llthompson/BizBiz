@@ -6,3 +6,13 @@ export const removeRow = (index) => {
     value: index
   }
 }
+
+export const loginUser = (username, password) => {
+  return {
+    type: 'LOGIN_USER',
+    payload: {
+      username,
+      password,
+    },
+  };
+};

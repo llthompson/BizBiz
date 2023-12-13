@@ -1,12 +1,15 @@
-import { connect } from 'react-redux'
-import Listings from '../components/Listings'
+import { connect } from 'react-redux';
+import Login from '../components/Login';
+import { loginUser } from '../actions'; 
 
 const mapStateToProps = (state) => ({
+  isLoggedIn: state.isLoggedIn,
+});
 
-    businesses: state.businesses 
+const mapDispatchToProps = (dispatch) => ({
+  login: (username, password) => dispatch(loginUser(username, password)),
+});
 
-})
+const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(Login);
 
-
-
-export default connect(mapStateToProps)(Listings)
+export default LoginContainer;
