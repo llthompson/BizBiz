@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import Modal from '@mui/material/Modal'; 
+import Modal from '@mui/material/Modal';
 import Listings from '../containers/Listings';
 import cookie from 'cookie';
 
@@ -18,7 +18,7 @@ const Login = () => {
             setError('Oops! Please enter a username and a password.');
         } else {
             setIsLoggedIn(true);
-            document.cookie = cookie.serialize('loggedIn', 'true', { maxAge: 60 });
+            document.cookie = cookie.serialize('loggedIn', true, { maxAge: 60 });
         }
     };
 
@@ -36,7 +36,7 @@ const Login = () => {
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}
             noValidate
-            autoComplete="off"
+            autoComplete="on"
         >
             {isLoggedIn ? (
                 <Listings isLoggedIn={isLoggedIn} />

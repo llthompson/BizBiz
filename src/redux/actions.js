@@ -16,3 +16,9 @@ export const loginUser = (username, password) => {
     },
   };
 };
+
+export const logoutUser = () => {
+  return {
+    type: 'LOGOUT_USER',
+  };
+};

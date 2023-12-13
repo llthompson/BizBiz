@@ -11,7 +11,8 @@ import DeleteIcon from '@mui/icons-material/Delete'
 
 
 const Listings = (props) => {
-    console.log('here are the', props)
+    const loggedIn = document.cookie.includes('loggedIn=true');
+    console.log('here are the', document.cookie)
     return (
         <div>
             <div>
@@ -37,6 +38,10 @@ const Listings = (props) => {
                                     <TableCell>{business.description}</TableCell>
                                     <TableCell>{business.hours}</TableCell>
                                     <TableCell>{business.location}</TableCell>
+
+
+                                    {loggedIn ? (
+                                    
                                     <TableCell>
                                         <DeleteIcon
                                             onClick={() => {
@@ -47,7 +52,7 @@ const Listings = (props) => {
                                             className="icon text-red"
                                         />
 
-                                    </TableCell>
+                                    </TableCell>) : ''}
                                 </TableRow>
                             ))}
                         </TableBody>

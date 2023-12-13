@@ -6,7 +6,10 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom'
 
-const Navigation = () => {
+const Navigation = ({ isLoggedIn, logout }) => {
+    const handleLogout = () => {
+        logout();
+    };
     return (
         <AppBar position="relative">
             <Toolbar>
@@ -21,7 +24,11 @@ const Navigation = () => {
                         <Link to="/">Listings</Link>
                     </li>
                     <li className="nav-list-item">
-                        <Link to="/login">Login</Link>
+                        {isLoggedIn ? (
+                            <button onClick={handleLogout}>Logout</button>
+                        ) : (
+                            <Link to="/login">Login</Link>
+                        )}
                     </li>
                 </ul>
             </Toolbar>
