@@ -20,15 +20,6 @@ const Navigation = () => {
                     <li className="nav-list-item">
                         <Link to="/">Listings</Link>
                     </li>
-                    {/* <li className="nav-list-item">
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li> */}
-                    {/* <li className="nav-list-item">
-                        <Link to="/import">Import</Link>
-                    </li> */}
-                    {/* <li className="nav-list-item">
-                        <Link to="/listings">Listings</Link>
-                    </li> */}
                     <li className="nav-list-item">
                         <Link to="/login">Login</Link>
                     </li>
