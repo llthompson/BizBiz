@@ -7,8 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete'
-// import { removeRow } from '../redux/actions';
-
 
 const Listings = (props) => {
     console.log('here are the', props)
@@ -37,17 +35,18 @@ const Listings = (props) => {
                                     <TableCell>{business.description}</TableCell>
                                     <TableCell>{business.hours}</TableCell>
                                     <TableCell>{business.location}</TableCell>
-                                    <TableCell>
-                                        <DeleteIcon
-                                            onClick={() => {
-                                                const index = props.businesses.indexOf(business);
-                                                console.log('Deleting business at index:', index);
-                                                props.removeRow(index);
-                                            }}
-                                            className="icon text-red"
-                                        />
-
-                                    </TableCell>
+                                    {props.isLoggedIn && (
+                                        <TableCell>
+                                            <DeleteIcon
+                                                onClick={() => {
+                                                    const index = props.businesses.indexOf(business);
+                                                    console.log('Deleting business at index:', index);
+                                                    props.removeRow(index);
+                                                }}
+                                                className="icon text-red"
+                                            />
+                                        </TableCell>
+                                    )}
                                 </TableRow>
                             ))}
                         </TableBody>
