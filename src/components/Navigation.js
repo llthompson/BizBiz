@@ -5,11 +5,13 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom'
+import cookie from 'cookie'
 
-const Navigation = ({ isLoggedIn, logout }) => {
+const Navigation = ({ logout }) => {
     const handleLogout = () => {
         logout();
     };
+    const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
     return (
         <AppBar position="relative">
             <Toolbar>

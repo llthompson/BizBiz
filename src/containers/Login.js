@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login';
-import { loginUser, logoutUser } from '../actions'; // Import the logoutUser action
+import { logout, loginSuccess } from '../redux/actions'; // Import the logoutUser action
 
-const mapStateToProps = (state) => ({
-    isLoggedIn: state.isLoggedIn,
-});
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.auth.isLoggedIn,
+    };
+};
 
-const mapDispatchToProps = (dispatch) => ({
-    login: (username, password) => dispatch(loginUser(username, password)),
-    logout: () => dispatch(logoutUser())
-});
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loginSuccess: () => dispatch(loginSuccess()),
+        logout: () => dispatch(logout()),
+    };
+};
 
-const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
-export default LoginContainer;

@@ -12,7 +12,25 @@ const businesses = (state = [], action) => {
     }
 }
 
+const initialState = {
+    isLoggedIn: false,
+};
+const authReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'LOGIN_SUCCESS':
+            console.log('reducers')
+            return {
+                ...state,
+                isLoggedIn: true,
+            };
+        case 'LOGOUT':
+            return {
+                ...state,
+                isLoggedIn: false,
+            };
+        default:
+            return state;
+    }
+};
 
-
-
-export default combineReducers({ businesses })
+export default combineReducers({ businesses, auth: authReducer })

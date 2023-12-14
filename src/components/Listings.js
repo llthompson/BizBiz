@@ -8,10 +8,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete'
 // import { removeRow } from '../redux/actions';
+import cookie from 'cookie'
+import Link from '@mui/material/Link';
 
-
-const Listings = (props) => {
-    const loggedIn = document.cookie.includes('loggedIn=true');
+const Listings = ({ businesses, removeRow }) => {
+    const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
     console.log('here are the', document.cookie)
     return (
         <div>
@@ -27,32 +28,32 @@ const Listings = (props) => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {props.businesses.map((business) => (
+                            {businesses.map((business) => (
                                 <TableRow
                                     key={business.name}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell component="th" scope="row">
-                                        {business.name}
+                                        <Link href={`/details/${business.id}`} >{business.name}</Link>
                                     </TableCell>
                                     <TableCell>{business.description}</TableCell>
                                     <TableCell>{business.hours}</TableCell>
                                     <TableCell>{business.location}</TableCell>
 
 
-                                    {loggedIn ? (
-                                    
-                                    <TableCell>
-                                        <DeleteIcon
-                                            onClick={() => {
-                                                const index = props.businesses.indexOf(business);
-                                                console.log('Deleting business at index:', index);
-                                                props.removeRow(index);
-                                            }}
-                                            className="icon text-red"
-                                        />
+                                    {isLoggedIn ? (
 
-                                    </TableCell>) : ''}
+                                        <TableCell>
+                                            <DeleteIcon
+                                                onClick={() => {
+                                                    const index = businesses.indexOf(business);
+                                                    console.log('Deleting business at index:', index);
+                                                    removeRow(index);
+                                                }}
+                                                className="icon text-red"
+                                            />
+
+                                        </TableCell>) : ''}
                                 </TableRow>
                             ))}
                         </TableBody>

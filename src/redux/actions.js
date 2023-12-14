@@ -7,18 +7,15 @@ export const removeRow = (index) => {
   }
 }
 
-export const loginUser = (username, password) => {
+export const loginSuccess = () => {
+  console.log('action')
   return {
-    type: 'LOGIN_USER',
-    payload: {
-      username,
-      password,
-    },
+    type: 'LOGIN_SUCCESS',
   };
 };
 
-export const logoutUser = () => {
+export const logout = () => {
   return {
-    type: 'LOGOUT_USER',
+    type: 'LOGOUT',
   };
 };
