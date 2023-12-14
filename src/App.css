@@ -9,7 +9,9 @@
   margin: 25px;
 }
 
-
+gmp-map {
+  height: 100%;
+}
 
 a {
   text-decoration: none;

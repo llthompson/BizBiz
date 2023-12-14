@@ -8,7 +8,13 @@ const Details = (props) => {
     const id = props.match.params.id
     const business = props.businesses.find(b => b.id == id)
     return (
-        <Card className='bizDetails' variant="outlined" sx={{ minWidth: 275 }}>
+        <Card className='bizDetails' variant="outlined"
+            sx={{
+                minWidth: 275,
+                bgcolor: 'info.main',
+                mt: 4,
+                mx: 'auto', width: 600
+            }}>
             <CardContent>
                 <Typography variant="h5" component="div">
                     {business.name}
@@ -19,7 +25,7 @@ const Details = (props) => {
                 <Typography color="text.secondary">
                     Description: {business.description}
                 </Typography>
-                {/* Add more details as needed */}
+                Map: {business.googleMaps.marker.position}
             </CardContent>
         </Card>
     )
