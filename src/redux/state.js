@@ -10,7 +10,7 @@ export default {
             googleMaps: {
                 map: {
                     center: "30.269453048706055,-97.74507141113281",
-                    zoom: "14",
+                    zoom: 13,
                     mapId: "DEMO_MAP_ID"
                 },
                 marker: {
@@ -28,7 +28,7 @@ export default {
             googleMaps: {
                 map: {
                     center: "30.282087326049805,-97.70565795898438",
-                    zoom: "14",
+                    zoom: 13,
                     mapId: "DEMO_MAP_ID"
                 },
                 marker: {
@@ -46,7 +46,7 @@ export default {
             googleMaps: {
                 map: {
                     center: "30.313400268554688,-97.68814086914062",
-                    zoom: "14",
+                    zoom: 13,
                     mapId: "DEMO_MAP_ID"
                 },
                 marker: {
@@ -64,7 +64,7 @@ export default {
             googleMaps: {
                 map: {
                     center: "30.240468978881836,-97.75337982177734",
-                    zoom: "14",
+                    zoom: 13,
                     mapId: "DEMO_MAP_ID"
                 },
                 marker: {
@@ -82,7 +82,7 @@ export default {
             googleMaps: {
                 map: {
                     center: "30.27383804321289,-97.72039031982422",
-                    zoom: "14",
+                    zoom: 13,
                     mapId: "DEMO_MAP_ID"
                 },
                 marker: {

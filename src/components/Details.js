@@ -2,18 +2,30 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 const Details = (props) => {
-    const id = props.match.params.id
-    const business = props.businesses.find(b => b.id == id)
+    const id = props.match.params.id;
+    const business = props.businesses.find(b => b.id == id);
+
+    const mapContainerStyle = {
+        width: '100%',
+        height: '300px',
+    };
+
+    const center = {
+        lat: parseFloat(business.googleMaps.marker.position.split(',')[0]),
+        lng: parseFloat(business.googleMaps.marker.position.split(',')[1]),
+    };
+
     return (
         <Card className='bizDetails' variant="outlined"
             sx={{
                 minWidth: 275,
                 bgcolor: 'info.main',
                 mt: 4,
-                mx: 'auto', width: 600
+                mx: 'auto',
+                width: 600,
             }}>
             <CardContent>
                 <Typography variant="h5" component="div">
@@ -25,10 +37,20 @@ const Details = (props) => {
                 <Typography color="text.secondary">
                     Description: {business.description}
                 </Typography>
-                Map: {business.googleMaps.marker.position}
+                <LoadScript
+                    googleMapsApiKey="AIzaSyApcpNslQPcFoA_rvesdT0xe7WAPQRqMXE"
+                >
+                    <GoogleMap
+                        mapContainerStyle={mapContainerStyle}
+                        center={center}
+                        zoom={business.googleMaps.map.zoom}
+                    >
+                        <Marker position={center} title={business.googleMaps.marker.title} />
+                    </GoogleMap>
+                </LoadScript>
             </CardContent>
         </Card>
-    )
-}
+    );
+};
 
 export default Details;
