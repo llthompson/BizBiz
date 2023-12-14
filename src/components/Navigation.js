@@ -27,7 +27,7 @@ const Navigation = ({ logout }) => {
                     </li>
                     <li className="nav-list-item">
                         {isLoggedIn ? (
-                            <button onClick={handleLogout}>Logout</button>
+                            <Link to='/logout'>Logout</Link>
                         ) : (
                             <Link to="/login">Login</Link>
                         )}

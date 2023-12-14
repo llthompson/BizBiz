@@ -9,6 +9,8 @@
   margin: 25px;
 }
 
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -64,4 +66,8 @@ ul {
 
 #dontstandsoclosetome {
   margin-top: 65px;
+}
+
+.bizDetails {
+  background-color: lime;
 }
