@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+require('dotenv').config();
 
 const Details = (props) => {
     const id = props.match.params.id;
@@ -17,6 +18,8 @@ const Details = (props) => {
         lat: parseFloat(business.googleMaps.marker.position.split(',')[0]),
         lng: parseFloat(business.googleMaps.marker.position.split(',')[1]),
     };
+
+    const apiKey = process.env.API_KEY;
 
     return (
         <Card className='bizDetails' variant="outlined"
@@ -38,7 +41,7 @@ const Details = (props) => {
                     Description: {business.description}
                 </Typography>
                 <LoadScript
-                    googleMapsApiKey="AIzaSyApcpNslQPcFoA_rvesdT0xe7WAPQRqMXE"
+                    googleMapsApiKey={apiKey}
                 >
                     <GoogleMap
                         mapContainerStyle={mapContainerStyle}
