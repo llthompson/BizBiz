@@ -13,7 +13,7 @@ const Navigation = ({ logout }) => {
     };
     const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
     return (
-        <AppBar position="relative">
+        <AppBar sx={{ bgcolor: 'success.main' }} position="relative">
             <Toolbar>
                 <IconButton color="inherit">
                     <MenuIcon />

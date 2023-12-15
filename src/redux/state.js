@@ -5,7 +5,7 @@ export default {
             id: 1,
             name: "Fallout Theater",
             description: "Comedy club & improv school hosting a variety of shows, festivals & stand-up competitions.",
-            hours: "Mon-Sat: 7:30pm-11:30pm",
+            hours: "7:30PM - 11:30PM",
             location: "616 Lavaca St, Austin, TX 78701",
             googleMaps: {
                 map: {
@@ -23,7 +23,7 @@ export default {
             id: 2,
             name: "Zeds Real Fruit Ice Cream",
             description: "New Zealand-inspired desserts doled out in a casual cinderblock counter-serve with outdoor seating.",
-            hours: "Mon-Sun: 3pm-10pm",
+            hours: "3PM - 10PM",
             location: "1814 Harvey St, Austin, TX 78702",
             googleMaps: {
                 map: {
@@ -41,7 +41,7 @@ export default {
             id: 3,
             name: "Austin Creative Reuse Center",
             description: "Nonprofit that promotes conservation and reuse through creativity, education, and community building. We're giving materials a second life!",
-            hours: "Tues-Sun: 11am-7pm",
+            hours: "11AM - 7PM",
             location: "2005 Wheless Ln, Austin, TX 78723",
             googleMaps: {
                 map: {
@@ -59,7 +59,7 @@ export default {
             id: 4,
             name: "Lucy's Fried Chicken",
             description: "Upscale versions of Southern staples in a refurbished old building with a deck & patio.",
-            hours: "Mon-Sun: 11am-9pm",
+            hours: "11AM - 9PM",
             location: "2218 College Ave, Austin, TX 78704",
             googleMaps: {
                 map: {
@@ -77,7 +77,7 @@ export default {
             id: 5,
             name: "Outer Heaven Disco Club",
             description: "Our bar is a pirate ship in a sea of capitalist scumbags and we aim to battle the rich vultures, rather than be another nail in Austin’s coffin.",
-            hours: "Tues-Sat: 9pm-2am",
+            hours: "9PM - 2AM",
             location: "1808 E 12th St, Austin, TX 78702",
             googleMaps: {
                 map: {

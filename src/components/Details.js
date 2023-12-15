@@ -22,22 +22,29 @@ const Details = (props) => {
     // const apiKey = process.env.API_KEY;
     console.log('where are yyou', apiKey)
     return (
-        <Card className='bizDetails' variant="outlined"
+        <Card className='bizDetails' 
             sx={{
+                color: 'text.primary',
                 minWidth: 275,
-                bgcolor: 'info.main',
+                bgcolor: 'common.white',
                 mt: 4,
                 mx: 'auto',
                 width: 600,
             }}>
-            <CardContent>
-                <Typography variant="h5" component="div">
+            <CardContent
+            sx={{
+                color: 'text.primary',
+            }}>
+                <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', m: 1 }}>
                     {business.name}
                 </Typography>
-                <Typography color="text.secondary">
-                    Address: {business.location}
+                <Typography sx={{ fontWeight: 'bold', m: 1 }} color="text.primary">
+                    {business.location}
                 </Typography>
-                <Typography color="text.secondary">
+                <Typography sx={{ fontWeight: 'bold', m: 1 }} color="text.primary">
+                    {business.hours}
+                </Typography>
+                <Typography sx={{ fontWeight: 'regular', m: 1 }} color="text.primary">
                     Description: {business.description}
                 </Typography>
                 <LoadScript
