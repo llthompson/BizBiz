@@ -6,6 +6,7 @@ import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import { apiKey } from '../api-key';
 
 const Details = (props) => {
+    console.log('Details component is being rendered');
     const id = props.match.params.id;
     const business = props.businesses.find(b => b.id == id);
 

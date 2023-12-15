@@ -1,10 +1,10 @@
 // components/Logout.js
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/actions';
 import cookie from 'cookie';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 const Logout = () => {
   const dispatch = useDispatch();

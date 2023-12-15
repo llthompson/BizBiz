@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete'
 import cookie from 'cookie'
-import Link from '@mui/material/Link';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Listings = ({ businesses, removeRow }) => {
     const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
@@ -33,7 +33,7 @@ const Listings = ({ businesses, removeRow }) => {
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell component="th" scope="row">
-                                        <Link href={`/details/${business.id}`} >{business.name}</Link>
+                                        <RouterLink to={`/details/${business.id}`}>{business.name}</RouterLink>
                                     </TableCell>
                                     <TableCell>{business.description}</TableCell>
                                     <TableCell>{business.hours}</TableCell>
