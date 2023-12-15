@@ -29,7 +29,8 @@ const Listings = ({ businesses, removeRow }) => {
                             {businesses.map((business) => (
                                 <TableRow
                                     key={business.name}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    sx={{ 
+                                        '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell component="th" scope="row">
                                         <RouterLink to={`/details/${business.id}`}>{business.name}</RouterLink>

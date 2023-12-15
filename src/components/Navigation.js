@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, Link as RouterLink } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +12,7 @@ const Navigation = () => {
 
     const handleLogout = () => {
         dispatch(logout());
+        history.push('/login');
     };
 
     return (
@@ -27,13 +28,23 @@ const Navigation = () => {
                     <li className="nav-list-item">
                         <Link to="/">Listings</Link>
                     </li>
-                    <li className="nav-list-item">
-                        {isLoggedIn ? (
-                            <button onClick={() => { handleLogout(); history.push('/login'); }}>Logout</button>
-                        ) : (
+                    {isLoggedIn && (
+                        <>
+                            <li className="nav-list-item">
+                                <RouterLink to="/add" color="inherit">
+                                    Add
+                                </RouterLink>
+                            </li>
+                            <li className="nav-list-item">
+                                <button onClick={handleLogout}>Logout</button>
+                            </li>
+                        </>
+                    )}
+                    {!isLoggedIn && (
+                        <li className="nav-list-item">
                             <Link to="/login">Login</Link>
-                        )}
-                    </li>
+                        </li>
+                    )}
                 </ul>
             </Toolbar>
         </AppBar>
