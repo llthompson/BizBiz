@@ -1,44 +1,45 @@
-import React from 'react'
-import {
-    AppBar, Toolbar, IconButton,
-    Typography
-} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-import { Link, useHistory } from 'react-router-dom'
-import cookie from 'cookie'
+// components/Navigation.js
 
-const Navigation = ({ isLoggedIn }) => {
-    const history = useHistory();
+import React from 'react';
+import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../redux/actions';
 
-    const handleLogout = () => {
-        document.cookie = cookie.serialize('loggedIn', null, { maxAge: 0 });
-        history.push('/login');
-    };
+const Navigation = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-    return (
-        <AppBar sx={{ bgcolor: 'success.main' }} position="relative">
-            <Toolbar>
-                <IconButton color="inherit">
-                    <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" style={{ flexGrow: "1" }}>
-                    Small Business App
-                </Typography>
-                <ul className="nav-list">
-                    <li className="nav-list-item">
-                        <Link to="/">Listings</Link>
-                    </li>
-                    <li className="nav-list-item">
-                        {isLoggedIn ? (
-                            <button onClick={handleLogout}>Logout</button>
-                        ) : (
-                            <Link to="/login">Login</Link>
-                        )}
-                    </li>
-                </ul>
-            </Toolbar>
-        </AppBar>
-    );
-}
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
-export default Navigation
+  return (
+    <AppBar sx={{ bgcolor: 'success.main' }} position="relative">
+      <Toolbar>
+        <IconButton color="inherit">
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" style={{ flexGrow: '1' }}>
+          Small Business App
+        </Typography>
+        <ul className="nav-list">
+          <li className="nav-list-item">
+            <Link to="/">Listings</Link>
+          </li>
+          <li className="nav-list-item">
+            {isLoggedIn ? (
+              <button onClick={() => { handleLogout(); history.push('/login'); }}>Logout</button>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
+          </li>
+        </ul>
+      </Toolbar>
+    </AppBar>
+ );
+};
+
+export default Navigation;
