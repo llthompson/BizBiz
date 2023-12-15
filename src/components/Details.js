@@ -19,8 +19,6 @@ const Details = (props) => {
         lng: parseFloat(business.googleMaps.marker.position.split(',')[1]),
     };
 
-    // const apiKey = process.env.API_KEY;
-    console.log('where are yyou', apiKey)
     return (
         <Card className='bizDetails' 
             sx={{

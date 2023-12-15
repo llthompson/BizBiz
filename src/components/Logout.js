@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cookie from 'cookie';
 import { Redirect } from 'react-router-dom';
 
 function useLogout() {
     useEffect(() => {
-        // Do something
         document.cookie = cookie.serialize('loggedIn', null, { maxAge: 0 });
 
     }, []);
 
     return {
         logout: () => {
-            // Do something
         }
     };
 }
 
-const logout = () => {
+const Logout = () => {
     const { logout } = useLogout();
-    return <Redirect to='/' />
+    logout();
+    return <Redirect to='/login' />;
 }
 
-export default logout;
+export default Logout;

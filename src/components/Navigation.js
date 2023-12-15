@@ -4,14 +4,17 @@ import {
     Typography
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import cookie from 'cookie'
 
-const Navigation = ({ logout }) => {
+const Navigation = ({ isLoggedIn }) => {
+    const history = useHistory();
+
     const handleLogout = () => {
-        logout();
+        document.cookie = cookie.serialize('loggedIn', null, { maxAge: 0 });
+        history.push('/login');
     };
-    const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
+
     return (
         <AppBar sx={{ bgcolor: 'success.main' }} position="relative">
             <Toolbar>
@@ -27,7 +30,7 @@ const Navigation = ({ logout }) => {
                     </li>
                     <li className="nav-list-item">
                         {isLoggedIn ? (
-                            <Link to='/logout'>Logout</Link>
+                            <button onClick={handleLogout}>Logout</button>
                         ) : (
                             <Link to="/login">Login</Link>
                         )}
@@ -35,7 +38,7 @@ const Navigation = ({ logout }) => {
                 </ul>
             </Toolbar>
         </AppBar>
-    )
+    );
 }
 
 export default Navigation
