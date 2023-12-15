@@ -39,7 +39,7 @@ const Login = ({ isLoggedIn, loginSuccess }) => {
             alignItems="center"
             component="form"
             sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                '& .MuiTextField-root': { m: 1.5, mt: 2, width: '50ch' },
             }}
             noValidate
             autoComplete="on"
@@ -47,7 +47,7 @@ const Login = ({ isLoggedIn, loginSuccess }) => {
             {/* {isLoggedIn ? (
                 <Redirect  />
             ) : ( */}
-            <Stack spacing={2}>
+            <Stack spacing={3}>
                 <TextField
                     required
                     id="login-un"
@@ -65,7 +65,7 @@ const Login = ({ isLoggedIn, loginSuccess }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <Button onClick={handleLogin} variant="contained">
+                <Button sx={{ bgcolor: 'text.disabled' }} onClick={handleLogin} variant="contained">
                     Login
                 </Button>
 
