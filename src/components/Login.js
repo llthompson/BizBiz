@@ -4,14 +4,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Modal from '@mui/material/Modal';
-// import Listings from '../containers/Listings';
 import cookie from 'cookie';
 import { Redirect } from 'react-router-dom';
 
 
-
 const Login = ({ isLoggedIn, loginSuccess }) => {
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -44,9 +41,6 @@ const Login = ({ isLoggedIn, loginSuccess }) => {
             noValidate
             autoComplete="on"
         >
-            {/* {isLoggedIn ? (
-                <Redirect  />
-            ) : ( */}
             <Stack spacing={3}>
                 <TextField
                     required
@@ -92,7 +86,6 @@ const Login = ({ isLoggedIn, loginSuccess }) => {
                     </Box>
                 </Modal>
             </Stack>
-            {/* )} */}
         </Box>
     );
 };

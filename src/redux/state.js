@@ -1,6 +1,5 @@
 export default {
     businesses: [
-
         {
             id: 1,
             name: "Fallout Theater",

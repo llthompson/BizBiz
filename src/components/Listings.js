@@ -12,7 +12,6 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const Listings = ({ businesses, removeRow }) => {
     const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
-    console.log('here are the', document.cookie)
     return (
         <div>
             <div>
@@ -39,14 +38,12 @@ const Listings = ({ businesses, removeRow }) => {
                                     <TableCell>{business.hours}</TableCell>
                                     <TableCell>{business.location}</TableCell>
 
-
                                     {isLoggedIn ? (
 
                                         <TableCell>
                                             <DeleteIcon
                                                 onClick={() => {
                                                     const index = businesses.indexOf(business);
-                                                    console.log('Deleting business at index:', index);
                                                     removeRow(index);
                                                 }}
                                                 className="icon text-red"

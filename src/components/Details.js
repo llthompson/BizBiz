@@ -6,7 +6,6 @@ import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import { apiKey } from '../api-key';
 
 const Details = (props) => {
-    console.log('Details component is being rendered');
     const id = props.match.params.id;
     const business = props.businesses.find(b => b.id == id);
 
@@ -21,7 +20,7 @@ const Details = (props) => {
     };
 
     return (
-        <Card className='bizDetails' 
+        <Card className='bizDetails'
             sx={{
                 color: 'text.primary',
                 minWidth: 275,
@@ -31,9 +30,9 @@ const Details = (props) => {
                 width: 600,
             }}>
             <CardContent
-            sx={{
-                color: 'text.primary',
-            }}>
+                sx={{
+                    color: 'text.primary',
+                }}>
                 <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', m: 1 }}>
                     {business.name}
                 </Typography>

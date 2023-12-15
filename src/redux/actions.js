@@ -1,6 +1,5 @@
 
 export const removeRow = (index) => {
-  console.log('is it in actions', index)
   return {
     type: 'REMOVE_ROW',
     value: index
@@ -8,7 +7,6 @@ export const removeRow = (index) => {
 }
 
 export const loginSuccess = () => {
-  console.log('action')
   return {
     type: 'LOGIN_SUCCESS',
   };
