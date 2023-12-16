@@ -1,3 +1,5 @@
+//containers/Detail.js
+
 import { connect } from 'react-redux';
 import Login from '../components/Login';
 import { logout, loginSuccess } from '../redux/actions';

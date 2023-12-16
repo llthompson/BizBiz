@@ -1,3 +1,5 @@
+//components/Logout.js
+
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/actions';

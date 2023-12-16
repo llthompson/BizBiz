@@ -1,3 +1,5 @@
+//components/Navigation.js
+
 import React, { useState, useCookies } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Link as RouterLink } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -9,7 +11,6 @@ const Navigation = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-    console.log(isLoggedIn)
     const handleLogout = () => {
         dispatch(logout());
         history.push('/login');
@@ -24,7 +25,7 @@ const Navigation = () => {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" style={{ flexGrow: '1' }}>
-                    Small Business App
+                    Austin Small Business
                 </Typography>
                 <ul className="nav-list">
                     <li className="nav-list-item">
@@ -38,7 +39,6 @@ const Navigation = () => {
                                 </Link>
                             </li>
                             <li className="nav-list-item">
-                                {/* <button onClick={handleLogout}>Logout</button> */}
                                 <Link to="/logout" color="inherit">
                                     Logout
                                 </Link>

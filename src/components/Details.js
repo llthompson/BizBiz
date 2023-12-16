@@ -8,37 +8,24 @@ import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import { apiKey, geocodeApiKey } from '../api-key';
 
 const Details = (props) => {
-    console.log('propwhat', props.businesses)
     const [center, setCenter] = useState(null);
 
     const id = props.match.params.id;
     const business = props.businesses.find(b => b.id == id);
-
-    console.log('one biz plz', business)
 
     const mapContainerStyle = {
         width: '100%',
         height: '300px',
     };
 
-    // const center = {
-    //     lat: parseFloat(business.googleMaps.marker.position.split(',')[0]),
-    //     lng: parseFloat(business.googleMaps.marker.position.split(',')[1]),
-    // };
     useEffect(() => {
         async function getCenter() {
             let response = await fetch(`https://maps.google.com/maps/api/geocode/json?key=${geocodeApiKey}&address=${business.location}`)
             response = await response.json()
-            console.log(response)
             setCenter(response.results[0].geometry.location)
         }
         getCenter()
-        console.log('my coord', business.location)
 
-        // setCenter({
-        //     lat: parseFloat(business.googleMaps.marker.position.split(',')[0]),
-        //     lng: parseFloat(business.googleMaps.marker.position.split(',')[1]),
-        // })
     }, [])
 
     return (

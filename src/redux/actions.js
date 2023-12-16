@@ -1,3 +1,4 @@
+//redux/action.js
 
 export const removeRow = (index) => {
   return {

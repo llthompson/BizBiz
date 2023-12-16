@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux'
+//redux/reducers.js
 
+import { combineReducers } from 'redux'
 
 const businesses = (state = [], action) => {
     switch (action.type) {
         case 'REMOVE_ROW':
             return state.filter((_, index) => index !== action.value);
         case 'ADD_BUSINESS':
-            console.log('should there be a biznss', action)
             const id = Math.max(...state.map(b => b.id)) + 1
             return [...state, { ...action.payload, id }]
         default:
