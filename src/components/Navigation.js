@@ -9,13 +9,13 @@ const Navigation = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-console.log(isLoggedIn)
+    console.log(isLoggedIn)
     const handleLogout = () => {
         dispatch(logout());
         history.push('/login');
     };
 
-    
+
 
     return (
         <AppBar sx={{ bgcolor: 'success.main' }} position="relative">
@@ -38,7 +38,10 @@ console.log(isLoggedIn)
                                 </Link>
                             </li>
                             <li className="nav-list-item">
-                                <button onClick={handleLogout}>Logout</button>
+                                {/* <button onClick={handleLogout}>Logout</button> */}
+                                <Link to="/logout" color="inherit">
+                                    Logout
+                                </Link>
                             </li>
                         </>
                     )}

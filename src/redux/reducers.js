@@ -7,7 +7,8 @@ const businesses = (state = [], action) => {
             return state.filter((_, index) => index !== action.value);
         case 'ADD_BUSINESS':
             console.log('should there be a biznss', action)
-            return [...state, { ...action.payload, id: state.length + 1 }]
+            const id = Math.max(...state.map(b => b.id)) + 1
+            return [...state, { ...action.payload, id }]
         default:
             return state;
     }

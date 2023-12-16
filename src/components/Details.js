@@ -8,10 +8,13 @@ import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import { apiKey, geocodeApiKey } from '../api-key';
 
 const Details = (props) => {
+    console.log('propwhat', props.businesses)
     const [center, setCenter] = useState(null);
 
     const id = props.match.params.id;
     const business = props.businesses.find(b => b.id == id);
+
+    console.log('one biz plz', business)
 
     const mapContainerStyle = {
         width: '100%',
@@ -72,7 +75,7 @@ const Details = (props) => {
                         center={center}
                         zoom={13}
                     >
-                        <Marker position={center}  />
+                        <Marker position={center} />
                     </GoogleMap>
                 </LoadScript>
             </CardContent>

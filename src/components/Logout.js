@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/actions';
-import cookie from 'cookie';
+import { useHistory } from 'react-router-dom';
+
 
 const Logout = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     dispatch(logout());
-    document.cookie = cookie.serialize('loggedIn', null, { maxAge: 0 });
+    history.push('/login');
   }, [dispatch]);
 
-  return null; 
+  return null;
 };
 
 export default Logout;
