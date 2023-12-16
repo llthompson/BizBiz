@@ -5,6 +5,9 @@ const businesses = (state = [], action) => {
     switch (action.type) {
         case 'REMOVE_ROW':
             return state.filter((_, index) => index !== action.value);
+        case 'ADD_BUSINESS':
+            console.log('should there be a biznss', action)
+            return [...state, { ...action.payload, id: state.length + 1 }]
         default:
             return state;
     }
@@ -12,6 +15,7 @@ const businesses = (state = [], action) => {
 
 const initialState = {
     isLoggedIn: false,
+    businesses: [],
 };
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -25,6 +29,7 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 isLoggedIn: false,
             };
+
         default:
             return state;
     }

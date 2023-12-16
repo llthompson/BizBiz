@@ -7,11 +7,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete'
-import cookie from 'cookie'
 import { Link as RouterLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Listings = ({ businesses, removeRow }) => {
-    const isLoggedIn = cookie.parse(document.cookie)['loggedIn'];
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     return (
         <div>
             <div>
@@ -49,7 +49,6 @@ const Listings = ({ businesses, removeRow }) => {
                                                 }}
                                                 className="icon text-red"
                                             />
-
                                         </TableCell>) : ''}
                                 </TableRow>
                             ))}

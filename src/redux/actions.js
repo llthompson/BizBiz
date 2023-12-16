@@ -17,3 +17,11 @@ export const logout = () => {
     type: 'LOGOUT',
   };
 };
+
+export const addBusiness = (business) => {
+  console.log('why no biz')
+  return {
+    type: 'ADD_BUSINESS',
+    payload: business,
+  };
+};

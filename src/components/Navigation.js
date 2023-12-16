@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCookies } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Link as RouterLink } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useHistory } from 'react-router-dom';
@@ -9,11 +9,13 @@ const Navigation = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-
+console.log(isLoggedIn)
     const handleLogout = () => {
         dispatch(logout());
         history.push('/login');
     };
+
+    
 
     return (
         <AppBar sx={{ bgcolor: 'success.main' }} position="relative">
@@ -31,9 +33,9 @@ const Navigation = () => {
                     {isLoggedIn && (
                         <>
                             <li className="nav-list-item">
-                                <RouterLink to="/add" color="inherit">
+                                <Link to="/add" color="inherit">
                                     Add
-                                </RouterLink>
+                                </Link>
                             </li>
                             <li className="nav-list-item">
                                 <button onClick={handleLogout}>Logout</button>
