@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBusiness } from '../redux/actions';
 import { TextField, Button, Container, Typography } from '@mui/material';
-
+import { useHistory } from 'react-router-dom';
 const AddBusiness = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const [name, setName] = useState('');
@@ -29,6 +30,7 @@ const AddBusiness = () => {
         setDescription('');
         setHours('');
         setLocation('');
+        history.push('/')
     };
 
     return (

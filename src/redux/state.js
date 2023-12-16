@@ -1,3 +1,5 @@
+//redux/state.js
+
 export default {
     businesses: [
         {
